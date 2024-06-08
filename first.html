@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SANSKAR</title>
+    <style>
+        body {
+            font-family: 'Lobster', cursive;
+            background-color: #2c3e50; /* Dark background color */
+            color: #ecf0f1; /* Light text color for contrast */
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #e67e22; /* Bright orange color */
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #ecf0f1; /* Light text color */
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        h2 {
+            color: #e74c3c; /* Bright red color */
+            font-size: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Form Styling */
+        form {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #34495e;
+            border-radius: 8px;
+            background-color: #34495e; /* Darker section background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ecf0f1;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="datetime-local"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #7f8c8d;
+            border-radius: 4px;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        input[type="submit"] {
+            padding: 12px 24px;
+            background-color: #e67e22; /* Bright orange color */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d35400; /* Darker orange on hover */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>WELFARE</h1>
+    <p>God has given us the gift of life as humans to help others and make the world a better place. Let's join hands, unite, and strive to live purposefully, making a positive difference in the lives of others and our communities. Together, let's make our lives meaningful and worthwhile.</p>
+
+    <div id="selectionPage" class="container">
+        <h2>choose an option</h2>
+        <form id="selectionForm">
+            <label for="userType">Please select:</label>
+            <select id="userType" name="userType" required>
+                <option value="">Select...</option>
+                <option value="needy">I need food</option>
+                <option value="abundant">I have abundant food</option>
+                <option value="education">Education Empowerment</option>
+                <option value="mental_support">Mental or financial Support</option>
+                <option value="donations">Donations</option>
+                <option value="feedback">Feedback</option>
+            </select><br><br>
+            <input type="submit" value="Next">
+        </form>
+    </div>
+
+    <!-- Needy Section -->
+    <!-- Needy Section -->
+<div id="needyPage" class="hidden container">
+    <h2>Needy</h2>
+    <form id="needyForm" action="process_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="children">Number of Children:</label>
+        <input type="number" id="children" name="children" required>
+
+        <label for="adults">Number of Adults:</label>
+        <input type="number" id="adults" name="adults" required>
+
+        <input type="hidden" name="needy_submit" value="1"> <!-- Hidden field to identify form submission -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<!-- Abundant Section -->
+<div id="abundantPage" class="hidden container">
+    <h2>Abundant</h2>
+    <form id="abundantForm" action="process_form.php" method="post">
+        <label for="restaurantName">Name:</label>
+        <input type="text" id="restaurantName" name="restaurantName" required>
+
+        <label for="restaurant">Name of the Restaurant:</label>
+        <input type="text" id="restaurant" name="restaurant" required>
+
+        <label for="restaurantPhone">Phone Number:</label>
+        <input type="tel" id="restaurantPhone" name="restaurantPhone">
+
+        <label for="foodType">Food Type:</label>
+        <select id="foodType" name="foodType">
+            <option value="veg">Vegetarian</option>
+            <option value="non-veg">Non-Vegetarian</option>
+        </select>
+
+        <label for="restaurantAddress">Address of Restaurant:</label>
+        <input type="text" id="restaurantAddress" name="restaurantAddress" required>
+
+        <label for="foodAmount">Amount of Food:</label>
+        <input type="number" id="foodAmount" name="foodAmount" required>
+
+        <label for="cookTime">Time Cooked:</label>
+        <input type="datetime-local" id="cookTime" name="cookTime" required>
+
+        <input type="hidden" name="abundant_submit" value="1"> <!-- Hidden field to identify form submission -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<!-- Education Empowerment Section -->
+<div id="educationPage" class="hidden container">
+    <h2>Education Empowerment</h2>
+    <form id="educationForm" action="process_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="standard">Standard:</label>
+        <input type="text" id="standard" name="standard" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="parentMobile">Parent's Mobile Number:</label>
+        <input type="tel" id="parentMobile" name="parentMobile" required>
+
+        <input type="hidden" name="education_submit" value="1"> <!-- Hidden field to identify form submission -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<!-- Mental Support Section -->
+<div id="mentalSupportPage" class="hidden container">
+    <h2>Mental or Financial Support</h2>
+    <form id="mentalSupportForm" action="process_form.php" method="post">
+        <label for="SupportType">Which type of support do you need, Please select:</label>
+        <select id="SupportType" name="SupportType" required>
+            <option value="">Select...</option>
+            <option value="Mental_Support">Mental Support</option>
+            <option value="Financial_support">Financial Support</option>
+        </select>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+
+        <input type="hidden" name="mental_support_submit" value="1"> <!-- Hidden field to identify form submission -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<!-- Donations Section -->
+<div id="donationsPage" class="hidden container">
+    <h2>Donations</h2>
+    <form id="donationsForm" action="process_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label>Mobile Number:</label>
+        <p>123456789</p> <!-- Assuming this is pre-filled or static -->
+
+        <label for="screenshot">Screenshot of Payment:</label>
+        <input type="file" id="screenshot" name="screenshot" required>
+
+        <label for="transactionId">Transaction ID:</label>
+        <input type="text" id="transactionId" name="transactionId" required>
+
+        <input type="hidden" name="donations_submit" value="1"> <!-- Hidden field to identify form submission -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<!-- Feedback Section -->
+<div id="feedbackPage" class="hidden container">
+    <h2>Feedback</h2>
+    <form id="feedbackForm" action="process_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+
+        <label for="feedback">Please give proper feedback so that we can improve ourselves accordingly:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+        <input type="hidden" name="feedback_submit" value="1"> <!-- Hidden field to identify form submission -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+    <script>
+    document.getElementById('selectionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var userType = document.getElementById('userType').value;
+        document.getElementById('selectionPage').classList.add('hidden');
+        if (userType === 'needy') {
+            document.getElementById('needyPage').classList.remove('hidden');
+        } else if (userType === 'abundant') {
+            document.getElementById('abundantPage').classList.remove('hidden');
+        } else if (userType === 'education') {
+            document.getElementById('educationPage').classList.remove('hidden');
+        } else if (userType === 'mental_support') {
+            document.getElementById('mentalSupportPage').classList.remove('hidden');
+        } else if (userType === 'donations') {
+            document.getElementById('donationsPage').classList.remove('hidden');
+        } else if (userType === 'feedback') {
+            document.getElementById('feedbackPage').classList.remove('hidden');
+        }
+    });
+
+    const forms = ['needyForm', 'abundantForm', 'educationForm', 'mentalSupportForm', 'donationsForm', 'feedbackForm'];
+    forms.forEach(formId => {
+        document.getElementById(formId).addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Your response has been recorded.');
+            this.reset();
+        });
+    });
+    </script>
+</body>
+</html>
+
